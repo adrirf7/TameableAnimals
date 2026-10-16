@@ -18,7 +18,7 @@ Los animales domesticados que te siguen (modo *seguir*) y están a menos de 20 m
 Ambos archivos se crean solos en `BepInEx/config` la primera vez que se carga el mod:
 
 - `adrirf7.TameableAnimals.Animals.cfg`: **qué animales se pueden domesticar**. Cada animal tiene su sección `[Creature X]` con `Enabled = true/false`, su comida, el nombre de la cría y su color (`BabyTint = R,G,B`). `AutoDetectOtherAnimals` controla si se incluyen otros animales detectados, además de Deer y Hare, y `ExtraCreatures` permite añadir más. Los animales domesticables en vanilla no se tocan y siempre se pueden domesticar.
-  Animales incluidos de serie: Deer, Deer_White, Hare, Seal (que huyen) y Bjorn, Unbjorn, Bat (que atacan y se domestican como el lobo).
+  Animales incluidos de serie: Deer, Hare, Seal (que huyen) y Bjorn, Unbjorn, Bat (que atacan y se domestican como el lobo).
 - `adrirf7.TameableAnimals.AvailableCreatures.txt` (se genera al entrar en un mundo): todas las criaturas del juego, separadas en domesticables por el mod, domesticables en vanilla y otras compatibles que se pueden añadir a `ExtraCreatures`.
 - `adrirf7.TameableAnimals.cfg`: tiempos de domesticación, embarazo y crecimiento, tamaño y vida de la cría y población máxima.
 

@@ -26,7 +26,6 @@ Ever wanted a herd of deer on your farm, a bear as your bodyguard or a seal colo
 | Animal | Food | Type |
 |---|---|---|
 | Deer | Raspberries, blueberries, carrots, turnips, cloudberries | Passive |
-| White deer | Raspberries, blueberries, carrots, turnips, cloudberries | Passive |
 | Hare | Carrots, turnips, onions, cloudberries, raspberries, blueberries | Passive |
 | Seal | Raw fish and whole fish | Passive |
 | Bjorn | Raw meat, deer meat, raw fish, honey, berries | Aggressive |

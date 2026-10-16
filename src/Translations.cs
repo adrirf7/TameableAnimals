@@ -19,7 +19,6 @@ namespace TameableAnimals
             // Prefijo para crías de especies sin nombre propio: "Young Neck" / "Cría de Neck".
             ["ta_young"] = Words("Young", "Cría de"),
             ["ta_baby_deer"] = Words("Fawn", "Cervatillo"),
-            ["ta_baby_deer_white"] = Words("White fawn", "Cervatillo blanco"),
             ["ta_baby_hare"] = Words("Leveret", "Lebrato"),
             ["ta_baby_seal"] = Words("Seal pup", "Cría de foca"),
             ["ta_baby_bjorn"] = Words("Bear cub", "Osezno"),

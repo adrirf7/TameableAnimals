@@ -15,7 +15,7 @@ namespace TameableAnimals
     {
         public const string ModGuid = "adrirf7.TameableAnimals";
         public const string ModName = "TameableAnimals";
-        public const string ModVersion = "1.0.0";
+        public const string ModVersion = "1.0.1";
 
         internal static TameableAnimalsPlugin Instance;
         internal static ManualLogSource Log;
@@ -29,12 +29,13 @@ namespace TameableAnimals
         // Los de IA de animal (huyen) y los de IA de monstruo (atacan, se domestican como el lobo).
         private static readonly string[] s_knownAnimals =
         {
-            "Deer", "Deer_White", "Hare", "Seal",
+            "Deer", "Hare", "Seal",
             "Bjorn", "Unbjorn", "Bat"
         };
 
         // Prefabs que el mod no toca nunca (ni por detección automática ni por ExtraCreatures).
-        private static readonly string[] s_blockedCreatures = { "Goblin_Gem" };
+        // Goblin_Gem y Deer_White solo aparecen por comandos.
+        private static readonly string[] s_blockedCreatures = { "Goblin_Gem", "Deer_White" };
 
         // Domesticación
         internal static ConfigEntry<float> TamingTime;
@@ -260,10 +261,6 @@ namespace TameableAnimals
                 case "Deer":
                     defaults.Foods = "Raspberry,Blueberries,Carrot,Turnip,Cloudberry";
                     defaults.BabyTint = "1.3,1.05,0.7";
-                    break;
-                case "Deer_White":
-                    defaults.Foods = "Raspberry,Blueberries,Carrot,Turnip,Cloudberry";
-                    defaults.BabyTint = "1.15,1.1,0.95";
                     break;
                 case "Hare":
                     defaults.Foods = "Carrot,Turnip,Onion,Cloudberry,Raspberry,Blueberries";
