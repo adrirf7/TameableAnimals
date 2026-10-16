@@ -29,7 +29,7 @@ Ever wanted a herd of deer on your farm, a bear as your bodyguard or a seal colo
 | Hare | Carrots, turnips, onions, cloudberries, raspberries, blueberries | Passive |
 | Seal | Raw fish and whole fish | Passive |
 | Bjorn | Raw meat, deer meat, raw fish, honey, berries | Aggressive |
-| Unbjorn | Entrails, raw meat, deer meat | Aggressive |
+| Unbjorn (disabled by default) | Entrails, raw meat, deer meat | Aggressive |
 | Bat | Berries, entrails | Aggressive |
 
 Aggressive animals are tamed like wolves: they attack you until they're tamed, then fight by your side.

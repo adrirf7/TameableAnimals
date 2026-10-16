@@ -1,6 +1,6 @@
 # TameableAnimals
 
-A BepInEx mod for Valheim that makes animals that are not tameable in vanilla (deer, hares, seals, Bjorn, Unbjorn, bats and other passive animals) tameable with the game's own taming system. Tamed animals breed and have their own smaller, recoloured offspring, and tamed animals that follow you travel through portals with you.
+A BepInEx mod for Valheim that makes animals that are not tameable in vanilla (deer, hares, seals, Bjorn, bats and other passive animals; Unbjorn optional) tameable with the game's own taming system. Tamed animals breed and have their own smaller, recoloured offspring, and tamed animals that follow you travel through portals with you.
 
 Vanilla tameables (boar, wolf, lox, hen, asksvin...) are not modified.
 

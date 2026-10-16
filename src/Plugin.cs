@@ -276,6 +276,8 @@ namespace TameableAnimals
                     defaults.BabyTint = "1.3,1.1,0.8";
                     break;
                 case "Unbjorn":
+                    // Desactivado por defecto; se puede activar en el config.
+                    defaults.Enabled = false;
                     defaults.Foods = "Entrails,RawMeat,DeerMeat";
                     defaults.BabyTint = "1.2,1.2,1.25";
                     break;
