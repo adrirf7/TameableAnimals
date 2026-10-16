@@ -17,35 +17,6 @@ namespace TameableAnimals
         }
     }
 
-    [HarmonyPatch(typeof(Tameable), nameof(Tameable.Interact))]
-    internal static class Tameable_Interact_Patch
-    {
-        private static bool Prefix(Tameable __instance, Humanoid user, bool hold, bool alt, ref bool __result)
-        {
-            TameableAnimal animal = __instance.GetComponent<TameableAnimal>();
-            bool? handled = animal != null ? animal.OnInteract(user, hold, alt) : null;
-            if (handled == null)
-            {
-                return true;
-            }
-            __result = handled.Value;
-            return false;
-        }
-    }
-
-    [HarmonyPatch(typeof(Tameable), nameof(Tameable.GetHoverText))]
-    internal static class Tameable_GetHoverText_Patch
-    {
-        private static void Postfix(Tameable __instance, ref string __result)
-        {
-            TameableAnimal animal = __instance.GetComponent<TameableAnimal>();
-            if (animal != null)
-            {
-                __result += animal.GetCommandHoverText();
-            }
-        }
-    }
-
     [HarmonyPatch(typeof(AnimalAI), nameof(AnimalAI.UpdateAI))]
     internal static class AnimalAI_UpdateAI_Patch
     {

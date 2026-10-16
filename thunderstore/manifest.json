@@ -1,8 +1,8 @@
 {
     "name": "TameableAnimals",
-    "version_number": "1.0.1",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/adrirf7/TameableAnimals",
-    "description": "Tame deer, hares, seals, bears and other wild animals with Valheim's own taming system. They breed, have their own smaller, recoloured offspring, and follow you through portals.",
+    "description": "Tame deer, hares, seals, bears and more with Valheim's own taming system. They breed, have their own offspring and follow you through portals. Ride bears with a new saddle, and craft every saddle in 7 colours.",
     "dependencies": [
         "denikson-BepInExPack_Valheim-5.4.2351"
     ]

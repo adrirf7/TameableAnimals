@@ -24,6 +24,9 @@ namespace TameableAnimals
             ["ta_baby_bjorn"] = Words("Bear cub", "Osezno"),
             ["ta_baby_unbjorn"] = Words("Undead bear cub", "Osezno no muerto"),
             ["ta_baby_bat"] = Words("Baby bat", "Murciélago bebé"),
+            ["ta_item_saddlebjorn"] = Words("Bear saddle", "Montura de oso"),
+            ["ta_item_saddlebjorn_desc"] = Words("A saddle sized for bears. Use it on a tamed bear to ride it.",
+                "Una montura hecha a medida para osos. Úsala en un oso domesticado para montarlo."),
         };
 
         private static Dictionary<string, string> Words(string english, string spanish)

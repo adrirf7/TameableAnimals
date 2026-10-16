@@ -91,13 +91,39 @@ namespace TameableAnimals
                 MakeTameable(adult, settings, byName, boarTameable);
                 GameObject baby = CreateBaby(adult, settings, byName);
                 AddProcreation(adult, baby, boarProcreation);
+                // Después de crear la cría, para que el osezno no lleve montura.
+                if (adult.name == "Bjorn")
+                {
+                    BearSaddle.AttachToBear(adult, byName, prefabs);
+                }
 
                 s_babies[adult.name] = baby;
                 prefabs.Add(baby);
                 TameableAnimalsPlugin.Log.LogInfo("Now tameable and breedable: " + adult.name + " (offspring: " + baby.name + ")");
             }
 
+            BearSaddle.EnsureItemRegistered(prefabs);
+            AddSaddleColors(byName.Values);
             WriteCreatureReport(modTames, vanillaTames, available);
+        }
+
+        /// <summary>Todos los animales con montura (lox, alce, asksvin y oso) guardan y muestran su color.</summary>
+        private static void AddSaddleColors(IEnumerable<GameObject> prefabs)
+        {
+            if (!SaddleColors.Enabled)
+            {
+                return;
+            }
+            foreach (GameObject prefab in prefabs)
+            {
+                Tameable tameable = prefab.GetComponent<Tameable>();
+                bool hasSaddle = tameable != null && (tameable.m_saddle != null || prefab.GetComponent<BearSaddleMarker>() != null);
+                if (hasSaddle && tameable.m_saddleItem != null
+                    && SaddleColors.GetSpec(tameable.m_saddleItem.name) != null && prefab.GetComponent<SaddleColor>() == null)
+                {
+                    prefab.AddComponent<SaddleColor>();
+                }
+            }
         }
 
         private enum CreatureKind
@@ -164,7 +190,7 @@ namespace TameableAnimals
             var text = new System.Text.StringBuilder();
             text.AppendLine("# Generated automatically by TameableAnimals when entering a world. No need to edit it.");
             text.AppendLine("# To make a creature from the last list tameable, add its name to ExtraCreatures");
-            text.AppendLine("# in " + TameableAnimalsPlugin.ModGuid + ".Animals.cfg (comma-separated) and restart the game.");
+            text.AppendLine("# in " + TameableAnimalsPlugin.FilePrefix + ".Animals.cfg (comma-separated) and restart the game.");
             text.AppendLine();
             text.AppendLine("== Tameable thanks to this mod ==");
             modTames.ForEach(name => text.AppendLine(name));
@@ -175,7 +201,7 @@ namespace TameableAnimals
             text.AppendLine("== Other compatible creatures (add to ExtraCreatures) ==");
             available.ForEach(name => text.AppendLine(name));
 
-            string path = System.IO.Path.Combine(BepInEx.Paths.ConfigPath, TameableAnimalsPlugin.ModGuid + ".AvailableCreatures.txt");
+            string path = System.IO.Path.Combine(BepInEx.Paths.ConfigPath, TameableAnimalsPlugin.FilePrefix + ".AvailableCreatures.txt");
             try
             {
                 System.IO.File.WriteAllText(path, text.ToString());
@@ -360,7 +386,7 @@ namespace TameableAnimals
             }
         }
 
-        private static GameObject GetPrefabHolder()
+        internal static GameObject GetPrefabHolder()
         {
             if (s_prefabHolder == null)
             {

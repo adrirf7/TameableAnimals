@@ -20,8 +20,6 @@ namespace TameableAnimals
         private Tameable m_tameable;
 
         private GameObject m_follow;
-        private float m_useHoldStart;
-        private bool m_useHoldHandled = true;
         private ItemDrop m_consumeTarget;
         private float m_consumeSearchTimer;
 
@@ -367,41 +365,7 @@ namespace TameableAnimals
 
         // ------------------------------------------------- Seguir / quedarse
 
-        private const float HoldToCommandSeconds = 0.6f;
-
-        /// <summary>
-        /// Pulsar Usar acaricia (lo hace vanilla). Mantener Usar alterna seguir/quedarse.
-        /// Devuelve null para dejar actuar a vanilla, o el resultado de la interacción si la gestiona el mod.
-        /// </summary>
-        internal bool? OnInteract(Humanoid user, bool hold, bool alt)
-        {
-            if (!TameableAnimalsPlugin.HoldUseToFollow.Value || alt)
-            {
-                return null;
-            }
-            if (!hold)
-            {
-                m_useHoldStart = Time.time;
-                m_useHoldHandled = false;
-                return null;
-            }
-            if (m_useHoldHandled || !m_tameable.IsTamed() || Time.time - m_useHoldStart < HoldToCommandSeconds)
-            {
-                return false;
-            }
-            m_useHoldHandled = true;
-            m_tameable.Command(user);
-            return true;
-        }
-
-        internal string GetCommandHoverText()
-        {
-            if (!TameableAnimalsPlugin.HoldUseToFollow.Value || !m_tameable.IsTamed())
-            {
-                return "";
-            }
-            return Localization.instance.Localize("\n[<color=yellow><b>$ta_hold $KEY_Use</b></color>] $ta_followstay");
-        }
+        // La orden (mantener Usar) la gestiona FollowCommand para todos los animales.
 
         /// <summary>Sustituye a Tameable.RPC_Command (que exige MonsterAI).</summary>
         internal void Command(ZDOID characterID, bool message)

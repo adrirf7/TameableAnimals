@@ -1,19 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>TameableAnimals</AssemblyName>
     <RootNamespace>TameableAnimals</RootNamespace>
     <LangVersion>latest</LangVersion>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);MSB3277</MSBuildWarningsAsMessages>
-    <!-- Ruta de instalación de Valheim. Se puede cambiar con: dotnet build -p:ValheimDir="D:\...\Valheim" -->
+    <!-- Ruta de instalaciÃ³n de Valheim. Se puede cambiar con: dotnet build -p:ValheimDir="D:\...\Valheim" -->
     <ValheimDir Condition="'$(ValheimDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Valheim</ValheimDir>
     <ManagedDir>$(ValheimDir)\valheim_Data\Managed</ManagedDir>
     <BepInExDir>$(ValheimDir)\BepInEx</BepInExDir>
-    <!-- Copiar automáticamente el .dll a BepInEx\plugins al compilar -->
+    <!-- Copiar automÃ¡ticamente el .dll a BepInEx\plugins al compilar -->
     <DeployToGame Condition="'$(DeployToGame)' == ''">true</DeployToGame>
   </PropertyGroup>
 
