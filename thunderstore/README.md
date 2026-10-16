@@ -10,6 +10,8 @@ Ever wanted a herd of deer on your farm, a bear you can ride into battle or a se
 
 ![Tamed bears](https://raw.githubusercontent.com/adrirf7/TameableAnimals/main/docs/bears.jpg)
 
+![Riding a bear with the bear saddle](https://raw.githubusercontent.com/adrirf7/TameableAnimals/main/docs/bear_riding.jpg)
+
 ## Features
 
 - **Vanilla taming:** feed the animal by dropping food on the ground, stay out of sight and wait for the taming bar to reach 100%.
@@ -39,6 +41,14 @@ Aggressive animals are tamed like wolves: they attack you until they're tamed, t
 The mod also automatically detects any other passive animal in the game. You can add more creatures by hand from the config: the `TameableAnimals.adrirf7.AvailableCreatures.txt` file lists every compatible creature.
 
 **Vanilla tameables (boar, wolf, lox, hen, asksvin...) can't be disabled** and keep their vanilla taming. They only gain the hold-E follow command, saddle colours and portal travel, which can all be turned off.
+
+## Saddle colours
+
+![Moose with a green saddle](https://raw.githubusercontent.com/adrirf7/TameableAnimals/main/docs/moose_green_saddle.jpg)
+
+![Lox with blue reins](https://raw.githubusercontent.com/adrirf7/TameableAnimals/main/docs/lox_blue_saddle.jpg)
+
+![Asksvin with a red saddle](https://raw.githubusercontent.com/adrirf7/TameableAnimals/main/docs/asksvin_red_saddle.jpg)
 
 ## Bear saddle
 
